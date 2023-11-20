@@ -1,0 +1,14 @@
+    <ul>
+        {{#products}}
+            <li>{{name}} - R$ {{price}} - {{category}}</li>
+        {{/products}}
+    </ul>
+     <hr></hr>
+    <ul>
+        {{#productsList}}
+            <li>{{.}}</li>
+        {{/productsList}}
+        {{^productsList}}
+            No product in the list
+        {{/productsList}}
+    </ul>

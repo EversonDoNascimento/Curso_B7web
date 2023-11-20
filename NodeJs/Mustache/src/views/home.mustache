@@ -2,14 +2,23 @@
 
     <head>
     
-        <title>Ola</title>
+        <title>Home</title>
 
     </head>
 
     <body>
     
     Your name is: {{name}}, you have years {{age}} old
-
+   <hr></hr>
+    {{#showWelcome}}
+       <div>You is old</div>
+    {{/showWelcome}}
+       
+    {{^showWelcome}}
+        <div>You is young</div>
+    {{/showWelcome}}
+     <hr></hr>
+    {{>./partials/items}}
     </body>
 
 
