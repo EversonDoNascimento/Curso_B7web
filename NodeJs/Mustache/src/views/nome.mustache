@@ -1,0 +1,17 @@
+{{>./partials/header}}
+
+    <form method="GET">
+        <label>Whats your name</label>
+        <input type="text" name="name" placeholder="Type it your name"/>
+        <input type="number" name="age" placeholder="Type it your age">
+        <input type="submit" value="Send"/>
+    </form>
+    {{#name}}
+        {{#age}}
+            <p>Hello {{name}}
+            ,You have years {{age}} old<p>
+        {{/age}}
+    {{/name}}
+    
+
+{{>./partials/footer}}

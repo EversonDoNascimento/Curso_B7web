@@ -10,6 +10,7 @@ server.set("views", path.join(__dirname, "views"));
 
 server.engine("mustache", mustacheExpress());
 
+server.use(express.urlencoded({extended : true}));
 server.use(router);
 server.listen(3000, () => {
   console.log("Running in the port 3000");

@@ -1,0 +1,13 @@
+{{>./partials/header}}
+
+    <form method="POST">
+
+        <input type="number" name="age" placeholder="Type it the year of birthday"/>
+        <button type="submit">Send</button>
+        {{#birthday}}
+            <p>You have {{birthday}} years</p>
+        {{/birthday}}
+
+    </form>
+
+{{>./partials/footer}}
