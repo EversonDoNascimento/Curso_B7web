@@ -8,7 +8,7 @@ const server = express();
 
 server.set("view engine", "mustache");
 
-server.set("views", path.join(__dirname, "views"));
+server.set("views", path.join(__dirname, "views/pages"));
 
 server.use(express.static(path.join(__dirname, "../public")));
 

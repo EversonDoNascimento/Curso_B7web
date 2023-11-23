@@ -1,0 +1,34 @@
+{{>../partials/header}}
+
+  {{#banner}}
+        <section
+            class="banner"
+            style="background-image: url({{urlBanner}})">
+            {{title}}
+        </section>
+        <h2>{{title}} disponíveis para adoção</h2>
+    {{/banner}}
+  <div class="container list">
+  {{#condition}}
+    {{#listAnimals}}
+            <div class="item">
+                <img src={{urlImage}} class="item--image" />
+                <div class="item--name">{{name}}</div>
+                <div class="item--color">Cor: {{color}}</div>
+                <div class="item--genre">Gênero: {{genre}}</div>
+            </div>
+        {{/listAnimals}}
+  {{/condition}}
+  {{^condition}}
+    <span
+        style="color: purple; 
+        width: 72vw; 
+        display: flex; 
+        justify-content:center;
+        font-weight: bold"
+    >Não encontramos o que você procura!</span>
+  {{/condition}}
+   
+    </body>
+</div>
+{{>../partials/footer}}
