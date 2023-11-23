@@ -1,14 +1,21 @@
     <ul>
+        <h4>All products</h4>
         {{#products}}
             <li>{{name}} - R$ {{price}} - {{category}}</li>
         {{/products}}
+        <h4>All products expensive</h4>
+        {{#expensiveList}}
+            <li>{{name}} - R$ {{price}} - {{category}}</li>
+        {{/expensiveList}}
     </ul>
      <hr></hr>
     <ul>
+        
         {{#productsList}}
-            <li>{{.}}</li>
+            <li>{{name}}</li>
         {{/productsList}}
         {{^productsList}}
             No product in the list
         {{/productsList}}
     </ul>
+   
