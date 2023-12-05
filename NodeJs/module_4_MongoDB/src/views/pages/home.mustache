@@ -1,0 +1,76 @@
+{{>partials/header}}
+
+Opa {{name}} {{lastName}}, tudo bem?
+{{#showOld}}
+    Como vai a vida?
+{{/showOld}}
+{{^showOld}}
+    Beleza?
+{{/showOld}}
+
+<hr/>
+<h2>Produtos</h2>
+<ul>
+    {{#products}}
+        {{>partials/productItem}}
+    {{/products}}
+</ul>
+<hr/>
+<h4>Por favor, preencha os campos abaixo!</h4>
+<form method="POST" action="/insert">
+    <div style="display:grid; grid-template-columns: 0.2fr 0.2fr 0.2fr; grid-gap: 5px">
+            <span>
+            <label>Primeiro nome:</label>
+            <input type="text" name="first" placeholder="Type it a name"/>
+            </span>
+            <span>
+            <label>Segundo nome:</label>
+            <input type="text" name="last" placeholder="Type it a name"/>
+            </span>
+            <span>
+            <label>Idade:</label>
+            <input type="number" name="age" placeholder="Type it a age"/>
+            </span>
+            <span>
+            <label>Email:</label>
+            <input type="text" name="email" placeholder="Type it a email"/>
+            </span>
+            <span>
+            <label>Interesses:</label>
+            <input type="text" name="interest" placeholder="Type it a Interests"/>
+            </span>
+    </div>
+  
+    <div style="margin-top: 10px; width: 50vw; display: flex; justify-content: center">
+        <input type="submit" value="Enviar"/>
+    </div>
+</form>
+
+<hr/>
+<ul>
+    {{#usuarios}}
+    <li style="margin-bottom: 15px; background-color: #fcfcc2; padding: 10px; width: 25vw">Nome: {{name.primeiroNome}} {{name.segundoNome}}<br>Email: {{email}}<br>Idade: {{idade}}<br>Interesses: {{interesses}} </li>
+    {{/usuarios}}
+</ul>
+
+<hr/>
+
+<h2>Produtos a partir de R$ 12</h2>
+<ul>
+    {{#expensives}}
+        {{>partials/productItem}}
+    {{/expensives}}
+</ul>
+
+<hr/>
+
+<ul>
+    {{#frasesDoDia}}
+        <li>{{.}}</li>
+    {{/frasesDoDia}}
+    {{^frasesDoDia}}
+        Não há frases motivacionais hoje.
+    {{/frasesDoDia}}
+</ul>
+
+{{>partials/footer}}
